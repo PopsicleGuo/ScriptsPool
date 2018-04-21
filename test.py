@@ -7,9 +7,9 @@ accountdicts = {}
 
 for line in f:
     entry = line.strip().split("\t")
-userid = entry[0]
-username = entry[1]
-accountdicts[userid] = username
+    userId = entry[0]
+    username = entry[1]
+    accountdicts[userId] = username
 
 f.close()
 
@@ -26,4 +26,3 @@ for loopdata in accountdicts.iteritems():
         print("Here you are ", loopdata)
     else:
         print("Sorry, no results")
-        
