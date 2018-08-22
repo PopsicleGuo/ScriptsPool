@@ -1,4 +1,4 @@
-
+import sys
 from P4 import P4, P4Exception
 # set up instance
 p4 = P4()
@@ -36,10 +36,11 @@ def getFiles():
         # p4.password = ''
         p4.exception_level = 1
         p4.connect()
-        info = p4.run("files", "//pvz/gw3/...#head")
+        info = p4.run("files", "//pvz/...#head")
         f = open('p:\originallist.txt', 'w')
         for i in info:
-            f.write(str(i['depotFile'] + "\n"))
+            #print(i['depotFile'].encode(sys.stdout.encoding, errors='replace'))
+            f.writelines(str(i['depotFile'].encode(sys.stdout.encoding, errors='replace')))
         f.close()
     except P4Exception:
         for e in p4.errors:
