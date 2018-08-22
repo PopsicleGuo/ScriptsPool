@@ -24,10 +24,10 @@ def getFolder():
         p4.disconnect()
 
 
-
 '''
 Try to get files from depot folder and output the result to another file
 '''
+
 def getFiles():
     try:
         p4.client = 'EASH-wenqiguo-picinc-dev'
