@@ -1,5 +1,6 @@
-
-# Try to make sql table into dictionaries
+'''
+ A script to take care about strings from another file
+'''
 
 f = open("account.txt", "r")
 

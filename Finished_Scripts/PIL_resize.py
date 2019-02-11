@@ -9,7 +9,7 @@ def fileResize():
             width, height = im.size
             outfile = os.path.join("C:\\test", infile)
             #halfsize = os.path.join("C:\\", infile)
-            im.resize((512, 512)).save(outfile)
+            #im.resize((512, 512)).save(outfile)
             im.resize((width//2, height//2)).save("c:\halfsize.png")
 
 if __name__ == '__main__':

@@ -1,3 +1,8 @@
+'''
+ A small example for how to get datetime with python!
+'''
+
+
 from datetime import date
 
 
