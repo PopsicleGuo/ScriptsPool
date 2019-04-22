@@ -16,16 +16,6 @@ def initial_xmldata_pdformat(xml):
 
     dic = {}
 
-    # for child in root:
-    #     for element in child:
-    #         if not element.tag in dic.keys():
-    #             dic[element.tag] = []
-    #
-    #         if element.tag == 'minDistance':
-    #             dic[element.tag].append(float(element.text))
-    #         else:
-    #             dic[element.tag].append(element.text)
-
     # A Iterator which is using index to go through all elements
     for i in range(len(root)):
         for subindex in range(len(root[i])):
@@ -42,6 +32,7 @@ def initial_xmldata_pdformat(xml):
     return dic
 
 
+# The function will covert the data frame to excel
 def xmlwriter(xml, name):
     df = pd.DataFrame(initial_xmldata_pdformat(xml))
     exname = name + '_' + datetime.now().strftime("%Y%m%d%H%M%S") + '.xlsx'
