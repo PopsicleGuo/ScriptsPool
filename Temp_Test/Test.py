@@ -45,3 +45,24 @@ def call(x):
 
 for i in yield_test(5):
     print(i, ",")
+
+
+from typing import Callable
+class Mersenne1:
+    def __init__(self, algorithm : Callable[[int], int]) -> None:
+        self.pow2 = algorithm
+    def __call__(self, arg: int) -> int:
+        return self.pow2(arg)-1
+
+
+def greeting(name):
+    return "Hello " + name
+
+from typing import List
+Vector = List[float]
+
+def scale(scalar: float, vector: Vector) -> Vector:
+    return [scalar * num for num in vector]
+
+new_vector = scale(2.0, [1.0, -4.2, 5.4])
+print(new_vector)

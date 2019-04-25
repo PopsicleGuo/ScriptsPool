@@ -33,22 +33,22 @@ Edx Problem 3 W1
 s = 'azcbobobegghakl'
 count = 0
 max_count = 0
-#result = 0
-substring = ''
+result = 0
+#substring = ''
 
 for i in range(len(s) - 1):
     if s[i] <= s[i + 1]:
         count += 1
         if count > max_count:
             max_count = count
-            #result = i + 1
-            substring = s[i + 1 - max_count:i+2]
+            result = i + 1
+            #substring = s[i + 1 - max_count:i+2]
     else:
         count = 0
 
-#start_position = result - max_count
-#print('Longest substring in alphabetical order is: ', s[start_position:result + 1])
-print('Longest substring in alphabetical order is: ', substring)
+start_position = result - max_count
+print('Longest substring in alphabetical order is: ', s[start_position:result + 1])
+#print('Longest substring in alphabetical order is: ', substring)
 
 
 '''
