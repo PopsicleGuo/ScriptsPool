@@ -35,6 +35,6 @@ def get_numeric(string):
 for dirpath, dirnames, filenames in os.walk(source_root):
     for file in filenames:
         source = os.path.join(dirpath, file)
-        covertedname = ''.join(re.findall(r'\d+', dirpath)) + '-' + file
-        output = os.path.join(direction, covertedname)
+        coverted_name = ''.join(re.findall(r'\d+', dirpath)) + '-' + file
+        output = os.path.join(direction, coverted_name)
         shutil.copy2(source, output)
