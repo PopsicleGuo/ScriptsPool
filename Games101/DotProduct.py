@@ -3,16 +3,18 @@ import numpy as np
 
 
 class DotProduct:
-
-    def normalize(self, vec):
+    @classmethod
+    def normalize(cls, vec):
         normalized_v = vec / np.sqrt(np.sum(vec ** 2))  ## convert a vector to unit vector
         return normalized_v                             ## ||a|| = sqrt(x ** 2 + y ** 2)
                                                         ## the result is still a vector
 
-    def set_a_vector(self, input_array):
+    @classmethod
+    def set_a_vector(cls, input_array):
         return np.array(input_array)
 
-    def dot(self, a, b):  ## Testing
+    @staticmethod
+    def dot(a, b):  ## Testing
         value = 0.0
         for i in range(len(a)):
             result = a[i] * b[i]
@@ -39,14 +41,18 @@ class DotProduct:
         return np.sqrt(np.sum(vector ** 2))
 
 
-instance = DotProduct()
-a = instance.set_a_vector([1, 1, 0])
-b = instance.set_a_vector([1, 0, 0])
+if __name__ == '__main__':
+    # instance = DotProduct()
+    # a = instance.set_a_vector([1, 1, 0])
+    # b = instance.set_a_vector([1, 0, 0])
+    #
+    # print("The cos theta value is: {}".format(instance.get_theta_value(a, b)))
+    #
+    # print("The b prep is: {}".format(instance.projection(b, a)))
 
-print("The cos theta value is: {}".format(instance.get_theta_value(a, b)))
-
-print("The b prep is: {}".format(instance.projection(b, a)))
-
+    t = DotProduct.set_a_vector([1, 1, 0])
+    print(t)
+    print(f"Normlized result is {DotProduct.normalize(t)}")
 
 ## The cos theta value is: 0.9965457582448797
 
